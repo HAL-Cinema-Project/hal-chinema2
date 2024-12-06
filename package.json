@@ -6,19 +6,29 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "mock:movie": "json-server --watch mock/movie.json -p 8011",
+    "mock:order": "json-server --watch mock/order.json -p 8012",
+    "mock:schedule": "json-server --watch mock/schedule.json -p 8013",
+    "mock:user": "json-server --watch mock/user.json -p 8014",
+    "mock": "concurrently \"npm:mock:movie\" \"npm:mock:order\" \"npm:mock:schedule\" \"npm:mock:user\""
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.9.1",
+    "axios": "^1.7.9",
+    "concurrently": "^9.1.0",
+    "json-server": "^1.0.0-beta.3",
+    "next": "15.0.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "next": "15.0.4"
+    "zod": "^3.23.8"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^8",
-    "eslint-config-next": "15.0.4"
+    "eslint-config-next": "15.0.4",
+    "typescript": "^5"
   }
 }
