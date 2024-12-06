@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { MoviesMock } from "../types/movies";
-import { apiGet } from "../../util/apiClient";
+import { apiGet } from from "../../src/utils/apiClient";
 export const useMovies = (pageId?: string, pageSize?: string) => {
   const [movies, setMovies] = useState<MoviesMock[]>([]);
 

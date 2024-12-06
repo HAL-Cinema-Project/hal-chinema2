@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { UserMock } from "../types/user";
-import { apiGet } from "../../util/apiClient";
+import { apiGet } from from "../../src/utils/apiClient";
 export const useUser = (pageId?: string, pageSize?: string) => {
   const [user, setUser] = useState<UserMock[]>([]);
 
