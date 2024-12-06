@@ -1,9 +1,9 @@
-import { CreateUser } from "../../../../mock/types/user";
-import {  apiDelete, apiGet, apiPost,  } from "../../../../util/apiClient";
+import { apiPost, apiGet, apiDelete } from "@/utils/apiClient";
+import { CreateUser } from "../../../mock/types/user";
 
 export const url = "http://localhost:8014/users";
 
-export const createUser = async ( data:CreateUser ) => {
+export const createUser = async (data: CreateUser) => {
   try {
     const res = await apiPost(url, data);
     return res;

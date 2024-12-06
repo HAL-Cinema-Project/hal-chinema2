@@ -5,7 +5,7 @@ import { apiGet } from "@/utils/apiClient";
 export const useOrders = (userId: number) => {
   const [orders, setOrders] = useState<OrdersMock[]>([]);
 
-  const fetchData = async (userId?: number) => {
+  const fetchData = async (userId: number) => {
     try {
       const url = "http://localhost:8012/orders";
       const res = await apiGet(url);

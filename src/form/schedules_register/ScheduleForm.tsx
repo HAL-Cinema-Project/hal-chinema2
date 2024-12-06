@@ -1,5 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Button } from "@yamada-ui/react";
+
 import { useForm, FormProvider } from "react-hook-form";
 import { InputField } from "../InputField";
 import { scheduleSchema } from "./scheduleSchema";
@@ -27,7 +27,7 @@ export function ScheduleForm() {
         <InputField fieldName='endTime' />
         <InputField fieldName='isAvailable' />
 
-        <Button type='submit'>Submit</Button>
+        <button type='submit'>Submit</button>
       </form>
     </FormProvider>
   );

@@ -1,5 +1,5 @@
-import { CreateSchedule } from "../../../../mock/types/schedule";
-import { apiDelete, apiGet, apiPost } from "../../../../util/apiClient";
+import { apiPost, apiGet, apiDelete } from "@/utils/apiClient";
+import { CreateSchedule } from "../../../mock/types/schedule";
 
 export const url = "http://localhost:8013/schedules";
 

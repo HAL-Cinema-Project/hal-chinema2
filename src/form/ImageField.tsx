@@ -1,4 +1,3 @@
-import { Input } from "@yamada-ui/react";
 import { useFormContext } from "react-hook-form";
 
 type InputFieldProps = {
@@ -12,7 +11,7 @@ export const ImageField = (props: InputFieldProps) => {
   return (
     <>
       <label htmlFor={fieldName}>{fieldName}</label>
-      <Input
+      <input
         type='file'
         accept='.png, .jpg'
         multiple

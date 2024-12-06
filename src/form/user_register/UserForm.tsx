@@ -1,4 +1,3 @@
-import { Button } from "@yamada-ui/react";
 import { FormProvider, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { InputField } from "../InputField";
@@ -26,15 +25,15 @@ export function UserForm() {
         <InputField fieldName='lastNameReading' />
         {/* <InputField fieldName='gender' type='number' /> */}
         <SelectField
-          fieldName="gender"
-          label="gender"
+          fieldName='gender'
+          label='gender'
           option={[
             { value: "1", label: "男性" },
             { value: "2", label: "女性" },
             { value: "3", label: "その他" },
-        ]}
+          ]}
         />
-        <Button type='submit'>Submit</Button>
+        <button type='submit'>Submit</button>
       </form>
     </FormProvider>
   );

@@ -1,4 +1,3 @@
-import { Input } from "@yamada-ui/react";
 import { useFormContext } from "react-hook-form";
 
 type InputFieldProps = {
@@ -13,7 +12,7 @@ export const InputField = (props: InputFieldProps) => {
   return (
     <>
       <label htmlFor={fieldName}>{fieldName}</label>
-      <Input type={type || "text"} {...register(fieldName)} />
+      <input type={type || "text"} {...register(fieldName)} />
       {formState.errors[fieldName] && (
         <span>{formState.errors[fieldName]!.message as string}</span>
       )}
