@@ -1,7 +1,12 @@
 ### インストールと起動
 
 `pnpm i && pnpm run dev`
+
 yamada ui のライブラリバージョンオフ整合解消のため`pnpm`を使用
+
+### モックの起動
+
+`pnpm run mock`
 
 ### フォルダ構成
 

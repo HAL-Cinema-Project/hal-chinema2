@@ -11,9 +11,9 @@ const Page = () => {
 
   const scheduleList: ScheduleList[] | undefined =
     schedules &&
-    schedules.map((schedule) => {
+    schedules.map((schedule: ScheduleMock) => {
       const movie: MoviesMock | undefined = movies.find(
-        (movie) => movie.id === schedule.movieId
+        (movie: MoviesMock) => movie.id === schedule.movieId
       );
       return {
         ...schedule,
