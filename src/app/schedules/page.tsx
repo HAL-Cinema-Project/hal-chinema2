@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useMovies } from "../../../mock/hooks/useMovies";
 import { useSchedules } from "../../../mock/hooks/useSchedule";
 import { ScheduleMock } from "../../../mock/types";
@@ -23,19 +24,25 @@ const Page = () => {
 
   return (
     <div style={{ padding: "20px" }}>
-      {scheduleList.map((schedule: ScheduleList, index) => (
-        <div key={index} style={{ marginBottom: "20px" }}>
-          <p
-            style={{
-              fontSize: "1.2rem",
-            }}
-          >
-            {schedule.startTime} - {schedule.endTime}
-            {schedule.movieName}
-            {schedule.theater}
-          </p>
-        </div>
-      ))}
+      <Link
+        href={{
+          pathname: "/schedules/:id/order",
+        }}
+      >
+        {scheduleList.map((schedule: ScheduleList, index) => (
+          <div key={index} style={{ marginBottom: "20px" }}>
+            <p
+              style={{
+                fontSize: "1.2rem",
+              }}
+            >
+              {schedule.startTime} - {schedule.endTime}
+              {schedule.movieName}
+              {schedule.theater}
+            </p>
+          </div>
+        ))}
+      </Link>
     </div>
   );
 };

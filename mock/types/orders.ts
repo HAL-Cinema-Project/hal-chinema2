@@ -4,8 +4,8 @@ export interface OrdersDetail {
   price?: number;
 }
 export interface OrdersMock {
-  id?: number;
-  userId?: number;
+  id?: string;
+  userId?: string;
   movieName?: string;
   screen?: string;
   orderDetail?: OrdersDetail[];
