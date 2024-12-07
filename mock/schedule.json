@@ -3,7 +3,6 @@
     {
       "id": "1",
       "movieId": "1",
-      "movieName": "映画A",
       "theater": "シアター1",
       "startTime": "2023-10-01T10:00:00",
       "endTime": "2023-10-01T12:00:00",
@@ -12,7 +11,6 @@
     {
       "id": "2",
       "movieId": "2",
-      "movieName": "映画B",
       "theater": "シアター2",
       "startTime": "2023-10-01T14:00:00",
       "endTime": "2023-10-01T16:00:00",

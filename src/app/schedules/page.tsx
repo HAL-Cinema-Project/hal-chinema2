@@ -1,38 +1,38 @@
 "use client";
-
 import { useMovies } from "../../../mock/hooks/useMovies";
 import { useSchedules } from "../../../mock/hooks/useSchedule";
 import { ScheduleMock } from "../../../mock/types";
 import { MoviesMock } from "../../../mock/types/movies";
+
+type ScheduleList = ScheduleMock & { movieName: string };
 const Page = () => {
   const { movies } = useMovies();
   const { schedules } = useSchedules();
-  const scheduleList = schedules.map((schedule: ScheduleMock) => {
-    const movie = movies.find(
-      (movie: MoviesMock) => Number(movie.id) === Number(schedule.movieId)
-    );
-    console.log("Found Movie:", movie);
-    return {
-      ...schedule,
-      movieName: movie ? movie.movieName : "",
-    };
-  });
 
-  console.log(scheduleList);
+  const scheduleList: ScheduleList[] | undefined =
+    schedules &&
+    schedules.map((schedule) => {
+      const movie: MoviesMock | undefined = movies.find(
+        (movie) => movie.id === schedule.movieId
+      );
+      return {
+        ...schedule,
+        movieName: movie?.movieName || "Unknown",
+      };
+    });
 
   return (
     <div style={{ padding: "20px" }}>
-      {scheduleList.map((schedule: ScheduleMock, index) => (
+      {scheduleList.map((schedule: ScheduleList, index) => (
         <div key={index} style={{ marginBottom: "20px" }}>
           <p
             style={{
               fontSize: "1.2rem",
-              fontWeight: "bold",
-              margin: "10px 0",
-              color: "#fff",
             }}
           >
-            {schedule.theater} {schedule.movieName}
+            {schedule.startTime} - {schedule.endTime}
+            {schedule.movieName}
+            {schedule.theater}
           </p>
         </div>
       ))}
