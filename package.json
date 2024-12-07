@@ -15,6 +15,9 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
+    "@yamada-ui/carousel": "^1.0.29",
+    "@yamada-ui/lucide": "^1.1.1",
+    "@yamada-ui/react": "^1.7.0",
     "axios": "^1.7.9",
     "concurrently": "^9.1.0",
     "json-server": "^1.0.0-beta.3",

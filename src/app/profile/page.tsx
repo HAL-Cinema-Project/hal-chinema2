@@ -1,8 +1,9 @@
+"use client";
 import { Suspense } from "react";
 import { useOrderByUser } from "../../../mock/hooks/useOrderByUser";
 import { useUser } from "../../../mock/hooks/useUser";
-import { OrderCard } from "./components/OrderCard";
-import { ProfileCard } from "./components/ProfileCard";
+import { OrderCard } from "@/components/profile/OrderCard";
+import { ProfileCard } from "@/components/profile/ProfileCard";
 
 function Page() {
   const { user } = useUser(1);

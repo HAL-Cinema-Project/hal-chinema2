@@ -1,5 +1,5 @@
 import { apiPost, apiGet, apiDelete } from "@/utils/apiClient";
-import { CreateUser } from "../../../mock/types/user";
+import { CreateUser } from "../../../../mock/types/user";
 
 export const url = "http://localhost:8014/users";
 
