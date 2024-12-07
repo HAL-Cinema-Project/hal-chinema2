@@ -27,12 +27,7 @@ export const TicketFormModal: React.FC<TicketFormModalProps> = (
         height: "100vh",
       }}
     >
-      <Button onClick={onOpen}>チケット選択</Button>
-
-      <Modal isOpen={isOpen} onClose={onClose}>
-        <h3>チケット選択</h3>
-        <TicketFormProvider scheduleId={scheduleId} />
-      </Modal>
+      <TicketFormProvider scheduleId={scheduleId} />
     </div>
   );
 };

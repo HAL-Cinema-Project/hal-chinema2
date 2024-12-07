@@ -150,6 +150,44 @@
           "price": 1200
         }
       ]
+    },
+    {
+      "id": "458d",
+      "userId": "1",
+      "movieName": "Pearl パール",
+      "screen": "シアター2",
+      "orderDetail": [
+        {
+          "seatName": "F4",
+          "priceType": 1800,
+          "price": 1200
+        },
+        {
+          "seatName": "F5",
+          "priceType": 1800,
+          "price": 1200
+        },
+        {
+          "seatName": "E6",
+          "priceType": 1800,
+          "price": 1200
+        },
+        {
+          "seatName": "E5",
+          "priceType": 1800,
+          "price": 1200
+        },
+        {
+          "seatName": "F2",
+          "priceType": 1800,
+          "price": 1200
+        },
+        {
+          "seatName": "C5",
+          "priceType": 1800,
+          "price": 1200
+        }
+      ]
     }
   ]
 }
