@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { ScheduleMock } from "../types/schedule";
-import { apiGet } from "../../src/utils/apiClient";
-
+import { apiGet } from "@/utils/apiClient";
 export const useSchedules = () => {
   const [schedules, setSchedules] = useState<ScheduleMock[]>([]);
 

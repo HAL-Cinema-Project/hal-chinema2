@@ -7,14 +7,6 @@
       "firstNameReading": "たろう",
       "lastNameReading": "やまだ",
       "gender": 1
-    },
-    {
-      "id": "2",
-      "firstName": "佐藤",
-      "lastName": "花子",
-      "firstNameReading": "はなこ",
-      "lastNameReading": "さとう",
-      "gender": 2
     }
   ]
 }

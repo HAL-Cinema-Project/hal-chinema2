@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { UserMock } from "../types/user";
+import { apiGet } from "@/utils/apiClient";
 
 export const useUser = (userId: number) => {
   const [user, setUser] = useState<UserMock>();
@@ -7,7 +8,7 @@ export const useUser = (userId: number) => {
   const fetchData = async (userId?: number) => {
     try {
       const url = `http://localhost:8014/users/${userId}`;
-      const res = await fetch(url);
+      const res = await apiGet(url);
       const data = await res.json();
       setUser(data);
     } catch (error) {

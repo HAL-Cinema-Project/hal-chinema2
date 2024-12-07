@@ -1,16 +1,12 @@
-import { NativeSelect, Button } from "@yamada-ui/react";
-import { useEffect, useState } from "react";
-import { useMovies } from "../../../mock/hooks/useMovies";
+"use client";
+import { Button } from "@yamada-ui/react";
 import { useSchedules } from "../../../mock/hooks/useSchedule";
 import { Table } from "@yamada-ui/table";
 import { deleteSchedule } from "../form/acrions/schedule";
-import { useNavigate } from "react-router";
 
 export const ScheduleTable = () => {
-  const { movies } = useMovies();
-  const [selectedMovieId, setSelectedMovieId] = useState<number>(1);
-  const { schedules } = useSchedules(selectedMovieId);
-  const router = useNavigate();
+  const { schedules } = useSchedules();
+
   const column = [
     {
       header: "ID",
@@ -48,7 +44,7 @@ export const ScheduleTable = () => {
             backgroundColor: "#a9ffcd",
           }}
           onClick={() => {
-            router(`/schedules/${info.row.original.id}`);
+            console.log(info.row.original.id);
           }}
         >
           詳細/編集
@@ -77,23 +73,8 @@ export const ScheduleTable = () => {
     },
   ];
 
-  useEffect(() => {
-    setSelectedMovieId(selectedMovieId);
-  }, [selectedMovieId]);
   return (
     <>
-      <NativeSelect
-        name='movieId'
-        value={selectedMovieId}
-        onChange={(e) => setSelectedMovieId(Number(e.target.value))}
-      >
-        {movies.map((movie) => (
-          <option key={movie.id} value={movie.id}>
-            {movie.movieName}
-          </option>
-        ))}
-      </NativeSelect>
-
       <Table data={schedules} columns={column} />
     </>
   );

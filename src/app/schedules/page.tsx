@@ -1,9 +1,10 @@
+"use client";
+
 import { useMovies } from "../../../mock/hooks/useMovies";
 import { useSchedules } from "../../../mock/hooks/useSchedule";
 import { ScheduleMock } from "../../../mock/types";
 import { MoviesMock } from "../../../mock/types/movies";
-
-export const Page = () => {
+const Page = () => {
   const { movies } = useMovies();
   const { schedules } = useSchedules();
   const scheduleList = schedules.map((schedule: ScheduleMock) => {
@@ -38,3 +39,5 @@ export const Page = () => {
     </div>
   );
 };
+
+export default Page;

@@ -1,12 +1,10 @@
-import Link from "next/link";
+"use client";
+import { useMovies } from "../../../mock/hooks/useMovies";
 import { MoviesMock } from "../../../mock/types/movies";
+import Link from "next/link";
 
-interface MoviePropsInterface {
-  movies: MoviesMock[];
-}
-
-export const Page = (props: MoviePropsInterface) => {
-  const { movies } = props;
+const Page = () => {
+  const { movies } = useMovies();
   return (
     <div style={{ padding: "20px" }}>
       {movies &&
@@ -56,3 +54,5 @@ export const Page = (props: MoviePropsInterface) => {
     </div>
   );
 };
+
+export default Page;

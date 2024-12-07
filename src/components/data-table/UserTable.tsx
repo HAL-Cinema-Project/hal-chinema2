@@ -1,13 +1,12 @@
 import { Table } from "@yamada-ui/table";
 import { useUser } from "../../../mock/hooks/useUsers";
 import { Button, Center } from "@yamada-ui/react";
-import { useNavigate } from "react-router";
+
 import { deleteUser } from "../form/acrions/user";
 
 export const UserTable = () => {
   const { user } = useUser();
 
-  const router = useNavigate();
   const columns = [
     { header: "User ID", accessorKey: "id" },
     { header: "Last Name", accessorKey: "lastName" },
@@ -26,7 +25,7 @@ export const UserTable = () => {
             backgroundColor: "#a9ffcd",
           }}
           onClick={() => {
-            router(`/users/${info.row.original.id}`);
+            console.log(info.row.original.id);
           }}
         >
           詳細/編集
