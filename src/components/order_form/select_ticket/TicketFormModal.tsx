@@ -24,10 +24,17 @@ export const TicketFormModal: React.FC<TicketFormModalProps> = (
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        height: "100vh",
       }}
     >
-      <TicketFormProvider scheduleId={scheduleId} />
+      <Button onClick={onOpen}>チケット選択</Button>
+      <>
+        <Modal isOpen={isOpen} onClose={onClose}>
+          <ModalHeader>チケット選択</ModalHeader>
+          <ModalBody>
+            <TicketFormProvider scheduleId={scheduleId} />
+          </ModalBody>
+        </Modal>
+      </>
     </div>
   );
 };

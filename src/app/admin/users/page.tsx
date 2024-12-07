@@ -1,9 +1,12 @@
 "use client";
-import { UserTable } from "@/components/data-table/UserTable";
+
+import { UserTable } from "@/components/admin/data-table/UserTable";
+import { AddUserModal } from "@/components/admin/form/modal/AddUserModal";
 
 const Page = () => {
   return (
     <div>
+      <AddUserModal />
       <UserTable />
     </div>
   );

@@ -18,7 +18,7 @@ const CinemaSeats = () => {
               const isSelected = selectedSeats.some(
                 (s) => s.row === seat.row && s.number === seat.number
               );
-              const isReserved = Math.random() < 0.1;
+              const isReserved = seat.row === "D" || seat.row === "E";
               return (
                 <button
                   key={`${seat.row}-${seat.number}`}
