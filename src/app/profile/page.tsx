@@ -6,7 +6,7 @@ import { OrderCard } from "@/components/profile/OrderCard";
 import { ProfileCard } from "@/components/profile/ProfileCard";
 
 function Page() {
-  const { user } = useUser(1);
+  const { user } = useUser("1");
   const { orders } = useOrderByUser(1);
 
   return (

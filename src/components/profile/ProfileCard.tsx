@@ -1,4 +1,4 @@
-import { UserMock } from "../../../../mock/types/user";
+import { UserMock } from "../../../mock/types/user";
 
 type ProfileCardProps = {
   user: UserMock;
