@@ -5,10 +5,15 @@ import Link from "next/link";
 
 const Page = () => {
   const { movies } = useMovies();
+
+  if (!Array.isArray(movies)) {
+    return <div>映画データが正しく読み込まれていません。</div>;
+  }
+
   return (
     <div style={{ padding: "20px" }}>
       {movies &&
-        movies.map((item: MoviesMock) => (
+        movies.map((item: any) => (
           <div
             key={item.id}
             style={{
