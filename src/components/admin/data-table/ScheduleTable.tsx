@@ -1,8 +1,8 @@
 "use client";
 import { Button } from "@yamada-ui/react";
-import { useSchedules } from "../../../mock/hooks/useSchedule";
 import { Table } from "@yamada-ui/table";
 import { deleteSchedule } from "../form/acrions/schedule";
+import { useSchedules } from "../../../../mock/hooks/useSchedule";
 
 export const ScheduleTable = () => {
   const { schedules } = useSchedules();

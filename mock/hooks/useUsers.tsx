@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { UserMock } from "../types/user";
 import { apiGet } from "@/utils/apiClient";
-export const useUser = (pageId?: string, pageSize?: string) => {
+export const useUsers = (pageId?: string, pageSize?: string) => {
   const [user, setUser] = useState<UserMock[]>([]);
 
   const fetchData = async (pageId?: string, pageSize?: string) => {

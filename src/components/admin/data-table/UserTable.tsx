@@ -1,11 +1,11 @@
 import { Table } from "@yamada-ui/table";
-import { useUser } from "../../../mock/hooks/useUsers";
+import { useUsers } from "../../../../mock/hooks/useUsers";
 import { Button, Center } from "@yamada-ui/react";
 
 import { deleteUser } from "../form/acrions/user";
 
 export const UserTable = () => {
-  const { user } = useUser();
+  const { user } = useUsers();
 
   const columns = [
     { header: "User ID", accessorKey: "id" },

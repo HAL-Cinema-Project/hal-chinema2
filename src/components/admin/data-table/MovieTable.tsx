@@ -1,3 +1,4 @@
+"use client";
 import { Table } from "@yamada-ui/table";
 import { Button, Center } from "@yamada-ui/react";
 import { deleteMovie } from "../form/acrions/movie";

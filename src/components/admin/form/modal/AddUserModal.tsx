@@ -6,7 +6,7 @@ import {
   ModalBody,
   ModalFooter,
 } from "@yamada-ui/react";
-import { UserForm } from "../form/user_register/UserForm";
+import { UserForm } from "../user_register/UserForm";
 
 export const AddUserModal = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -31,4 +31,4 @@ export const AddUserModal = () => {
       </Modal>
     </>
   );
-}
+};
