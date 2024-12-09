@@ -1,6 +1,5 @@
 "use client";
 import { useMovies } from "../../../mock/hooks/useMovies";
-import { MoviesMock } from "../../../mock/types/movies";
 import Link from "next/link";
 
 const Page = () => {
