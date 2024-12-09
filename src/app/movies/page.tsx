@@ -1,6 +1,7 @@
 "use client";
 import { useMovies } from "../../../mock/hooks/useMovies";
 import Link from "next/link";
+import { MoviesMock } from "../../../mock/types/movies";
 
 const Page = () => {
   const { movies } = useMovies();
@@ -12,7 +13,7 @@ const Page = () => {
   return (
     <div style={{ padding: "20px" }}>
       {movies &&
-        movies.map((item: any) => (
+        movies.map((item: MoviesMock) => (
           <div
             key={item.id}
             style={{

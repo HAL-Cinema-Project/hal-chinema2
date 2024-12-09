@@ -1,10 +1,7 @@
 import { z } from "zod";
 
 export const scheduleSchema = z.object({
-  id: z.number({
-    message: "IDは必須です",
-  }),
-  movieId: z.number({
+  movieId: z.string({
     message: "映画IDは必須です",
   }),
   movieName: z.string({
@@ -19,7 +16,7 @@ export const scheduleSchema = z.object({
   endTime: z.string({
     message: "終了時間は必須です",
   }),
-  isAvailable: z.boolean({
+  isAvailable: z.string({
     message: "予約可能かどうかは必須です",
   }),
 });

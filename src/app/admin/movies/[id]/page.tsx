@@ -1,7 +1,7 @@
 import { useParams } from "next/navigation";
 import { useMovieById } from "../../../../../mock/hooks/useMovieById";
 
-export const Page = () => {
+export default function Page() {
   const urlParams = useParams();
   const { id } = urlParams;
 
@@ -26,4 +26,4 @@ export const Page = () => {
       </div>
     </div>
   );
-};
+}
