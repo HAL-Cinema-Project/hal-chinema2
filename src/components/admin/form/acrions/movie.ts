@@ -1,5 +1,5 @@
 import { apiPost, apiGet, apiPut, apiDelete } from "@/utils/apiClient";
-import { CreateMovie, UpdateMovie } from "../../../../mock/types";
+import { CreateMovie, UpdateMovie } from "../../../../../mock/types/movies";
 
 export const url = "http://localhost:8011/movies";
 
