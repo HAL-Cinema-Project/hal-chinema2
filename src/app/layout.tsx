@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import "./globals.css";
 import { UIProvider } from "@yamada-ui/react";
 
 const geistSans = localFont({
@@ -25,7 +24,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='ja'>
+    <html lang="ja">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <UIProvider>{children}</UIProvider>
       </body>
