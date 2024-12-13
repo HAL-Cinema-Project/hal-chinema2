@@ -10,10 +10,21 @@ export const MovieList = () => {
 
   return (
     <>
-      <Box display={"flex"}>
-        {movies.map((item) => (
-          <MovieCard key={item.id} movieName={item.movieName} />
-        ))}
+      <Box as="center">
+        <Box
+          display={"flex"}
+          w={"1000px"}
+          justifyContent={"center"}
+          gap={"10px"}
+        >
+          {movies.map((item) => (
+            <MovieCard
+              key={item.id}
+              movieName={item.movieName}
+              movieImage={item.movieImage}
+            />
+          ))}
+        </Box>
       </Box>
     </>
   );

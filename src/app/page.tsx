@@ -1,7 +1,12 @@
+import { MovieList } from "@/components/top/movie_list/MovieList";
 import React from "react";
 
 const page = () => {
-  return <div>page</div>;
+  return (
+    <>
+      <MovieList />
+    </>
+  );
 };
 
 export default page;
