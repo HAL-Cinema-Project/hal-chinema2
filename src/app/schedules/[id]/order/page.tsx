@@ -3,24 +3,40 @@
 import CinemaSeats from "@/components/order_form/select_ticket/CinemaSeats";
 import { TicketFormModal } from "@/components/order_form/select_ticket/TicketFormModal";
 import {
-  OrderIdContext,
   OrderIdProvider,
 } from "@/components/order_form/store/OrderIdContext";
 import { SeatSelectionProvider } from "@/components/order_form/store/SeatSelectionContext";
 import { useParams } from "next/navigation";
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 const Page = () => {
-  const { id } = useParams();
-  if (typeof id !== "string") {
-    return <div>Invalid ID</div>;
+  const { id: scheduleId } = useParams();
+  const [movieId, setMovieId] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (typeof scheduleId === "string") {
+      // スケジュールIDからmovieIdを取得
+      axios.get(`http://localhost:8013/schedules/${scheduleId}`)
+        .then(response => {
+          setMovieId(response.data.movieId);
+        })
+        .catch(error => {
+          console.error("Error fetching schedule details:", error);
+        });
+    }
+  }, [scheduleId]);
+
+  if (typeof scheduleId !== "string" || !movieId) {
+    return <div>Loading...</div>;
   }
+
   return (
     <OrderIdProvider>
-      <SeatSelectionProvider>
+      <SeatSelectionProvider movieId={movieId}>
         <CinemaSeats />
 
-        {id ? <TicketFormModal scheduleId={id as string} /> : null}
+        {scheduleId ? <TicketFormModal scheduleId={scheduleId} /> : null}
       </SeatSelectionProvider>
     </OrderIdProvider>
   );

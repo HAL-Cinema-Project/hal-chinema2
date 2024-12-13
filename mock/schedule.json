@@ -15,6 +15,24 @@
       "startTime": "2023-10-01T14:00:00",
       "endTime": "2023-10-01T16:00:00",
       "isAvailable": false
+    },
+    {
+      "id": "b5bb",
+      "movieId": "1",
+      "movieName": "",
+      "theater": "シアター1",
+      "startTime": "2021-11-11",
+      "endTime": "2021-11-12",
+      "isAvailable": "0"
+    },
+    {
+      "id": "340f",
+      "movieId": "4",
+      "movieName": "",
+      "theater": "シアター1",
+      "startTime": "2021-11-11",
+      "endTime": "2021-11-12",
+      "isAvailable": "false"
     }
   ]
 }
