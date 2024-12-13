@@ -56,6 +56,16 @@
         "image/4-3.jpg",
         "image/4-4.jpg"
       ]
+    },
+    {
+      "id": "b98d",
+      "movieName": "君の名は。",
+      "director": "新海誠",
+      "summary": "ああああああああああああああ",
+      "link": "aaaaaaaaaaaaaaa",
+      "term": "90",
+      "startDate": "20250330",
+      "endDate": "20250508"
     }
   ]
 }
