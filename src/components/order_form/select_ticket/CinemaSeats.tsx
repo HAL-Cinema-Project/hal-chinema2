@@ -4,7 +4,7 @@ const ROWS = "ABCDEF".split("");
 const SEATS_PER_ROW = 7;
 
 const CinemaSeats = () => {
-  const { selectedSeats, toggleSeatSelection } = useSeatSelection();
+  const { selectedSeats,reservedSeats, toggleSeatSelection } = useSeatSelection();
 
   return (
     <div style={styles.container}>
@@ -18,7 +18,9 @@ const CinemaSeats = () => {
               const isSelected = selectedSeats.some(
                 (s) => s.row === seat.row && s.number === seat.number
               );
-              const isReserved = seat.row === "D" || seat.row === "E";
+              const isReserved = reservedSeats.some(
+                (s) => s.row === seat.row && s.number === seat.number
+              );
               return (
                 <button
                   key={`${seat.row}-${seat.number}`}
