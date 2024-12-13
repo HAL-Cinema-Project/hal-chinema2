@@ -39,7 +39,7 @@ export function TicketFormProvider(props: TicketFormProps) {
           const seat = CreateSeatSelects(data, selectedSeats);
           PostOrder({
             userId: "1",
-            movieName: movie?.movieName,
+            movieId: movie?.id,
             screen: schedule?.theater,
             orderDetail: seat,
           });
