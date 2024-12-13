@@ -24,9 +24,9 @@ export const AddUserModal = () => {
           <UserForm />
         </ModalBody>
         <ModalFooter>
-          <Button variant='ghost' onClick={onClose}>
+          {/* <Button variant='ghost' onClick={onClose}>
             閉じる
-          </Button>
+          </Button> */}
         </ModalFooter>
       </Modal>
     </>
