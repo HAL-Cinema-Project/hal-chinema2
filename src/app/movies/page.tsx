@@ -11,7 +11,7 @@ const Page = () => {
   }
 
   return (
-    <div style={{ padding: "20px" }}>
+    <div style={{ padding: "20px", width: "100%" }}>
       {movies &&
         movies.map((item: MoviesMock) => (
           <div
