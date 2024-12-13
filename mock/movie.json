@@ -31,7 +31,8 @@
       "link": "https://closemovie.jp/",
       "term": 110,
       "releaseDate": "2024-01-15",
-      "endDate": "2024-04-15"
+      "endDate": "2024-04-15",
+      "movieImage": ["image/3-2.jpg", "image/3-3.webp", "image/3-4.jpg"]
     },
     {
       "id": "4",
@@ -43,7 +44,7 @@
       "term": 115,
       "releaseDate": "2024-02-01",
       "endDate": "2024-05-01",
-      "movieImage": ["iame/4-2.jpg", "image/4-3.jpg", "image/4-4.jpg"]
+      "movieImage": ["image/4-2.jpg", "image/4-3.jpg", "image/4-4.jpg"]
     }
   ]
 }
