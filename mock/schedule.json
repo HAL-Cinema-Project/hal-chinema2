@@ -294,6 +294,15 @@
       "isAvailable": "",
       "startTime": "2025-01-12T00:00:00",
       "endTime": "2025-01-12T00:00:00"
+    },
+    {
+      "id": "6f2c",
+      "movieId": "2",
+      "movieName": "",
+      "theater": "シアター2",
+      "isAvailable": "",
+      "startTime": "2024-12-17T00:00:00",
+      "endTime": "2024-12-17T00:00:00"
     }
   ]
 }
