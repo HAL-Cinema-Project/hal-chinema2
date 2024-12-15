@@ -3,9 +3,16 @@ import { Table } from "@yamada-ui/table";
 import { Button, Center } from "@yamada-ui/react";
 import { deleteMovie } from "../form/acrions/movie";
 import { useMovies } from "../../../../mock/hooks/useMovies";
+import { useRouter } from "next/navigation";
 
 export const MovieTable = () => {
+  const router = useRouter();
   const { movies } = useMovies();
+
+  const handleRouter = (id: string) => {
+    router.push(`/admin/movies/${id}`);
+  };
+
 
   const columns = [
     { header: "Movie ID", accessorKey: "id" },
@@ -26,7 +33,7 @@ export const MovieTable = () => {
             backgroundColor: "#a9ffcd",
           }}
           onClick={() => {
-            console.log(info.row.original.id);
+            handleRouter(info.row.original.id)
           }}
         >
           詳細/編集

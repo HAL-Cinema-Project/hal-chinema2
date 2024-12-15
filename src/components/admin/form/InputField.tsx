@@ -3,6 +3,7 @@ import { useFormContext } from "react-hook-form";
 type InputFieldProps = {
   fieldName: string;
   type?: string;
+  label: string;
 };
 
 export const InputField = (props: InputFieldProps) => {

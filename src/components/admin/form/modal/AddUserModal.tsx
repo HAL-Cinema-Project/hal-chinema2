@@ -14,7 +14,7 @@ export const AddUserModal = () => {
   return (
     <>
       <Button style={{ margin: "0px 50px" }} onClick={onOpen}>
-        Open Modal
+        Create User
       </Button>
 
       <Modal isOpen={isOpen} onClose={onClose}>

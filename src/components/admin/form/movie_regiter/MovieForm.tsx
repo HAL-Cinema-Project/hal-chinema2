@@ -61,6 +61,11 @@ export function MovieForm() {
           </div>
         </section>
 
+        {/* 画像アップロード */}
+          <div style={fieldContainerStyle}>
+            <InputField fieldName="movieImage" type="file" label="映画の画像" />
+          </div>
+
         {/* 送信ボタン */}
         <div style={buttonContainerStyle}>
           <button type="submit">送信</button>

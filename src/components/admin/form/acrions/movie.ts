@@ -21,7 +21,7 @@ export const getMovies = async () => {
   }
 };
 
-export const getMovie = async (movieId: number) => {
+export const getMovie = async (movieId: string) => {
   try {
     const res = await apiGet(url + `/${movieId}`);
     return res;
