@@ -8,7 +8,12 @@ type Props = {
 export const TopCaption = ({ caption_text }: Props) => {
   return (
     <>
-      <Text left={"40px"} fontSize={"4xl"} fontWeight={"bold"}>
+      <Text
+        position={"relative"}
+        left={"-40px"}
+        fontSize={"6xl"}
+        fontWeight={"bold"}
+      >
         {caption_text}
       </Text>
     </>
