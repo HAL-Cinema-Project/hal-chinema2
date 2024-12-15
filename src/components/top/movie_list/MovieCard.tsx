@@ -12,18 +12,18 @@ export const MovieCard = (props: Props) => {
     <Card w={"25%"} variant="outline">
       <CardHeader
         sx={{
-          height: "300px", // CardHeaderの高さを固定
+          height: "300px",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          overflow: "hidden", // 画像がはみ出さないように
+          overflow: "hidden",
         }}
       >
         <Image
           sx={{
             width: "100%",
             height: "100%",
-            objectFit: "cover", // 高さ内に画像を収める
+            objectFit: "cover",
           }}
           src={props.movieImage?.[0]}
           alt={props.movieName}
