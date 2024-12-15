@@ -5,7 +5,7 @@ import { AddMovieModal } from "@/components/admin/form/modal/AddMovieModal";
 
 const Page = () => {
   return (
-    <div>
+    <div style={{marginTop: "10px"}}>
       <AddMovieModal />
       <MovieTable />
     </div>

@@ -1,6 +1,7 @@
 "use client";
+import { useState } from "react";
 import { Table } from "@yamada-ui/table";
-import { Button, Center } from "@yamada-ui/react";
+import { Button, Center, Input } from "@yamada-ui/react";
 import { deleteMovie } from "../form/acrions/movie";
 import { useMovies } from "../../../../mock/hooks/useMovies";
 import { useRouter } from "next/navigation";
@@ -8,11 +9,20 @@ import { useRouter } from "next/navigation";
 export const MovieTable = () => {
   const router = useRouter();
   const { movies } = useMovies();
+  const [searchQuery, setSearchQuery] = useState("");
 
   const handleRouter = (id: string) => {
     router.push(`/admin/movies/${id}`);
   };
 
+  const handleSearchChange = (event) => {
+    setSearchQuery(event.target.value);
+  };
+
+  const filteredMovies = movies.filter((movie) =>
+    movie.movieName.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    movie.director.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   const columns = [
     { header: "Movie ID", accessorKey: "id" },
@@ -64,6 +74,13 @@ export const MovieTable = () => {
 
   return (
     <>
+        <div style={{ width: "300px", marginTop: "-40px" , marginLeft: "200px", marginBottom: "20px" }}>
+          <Input
+            placeholder="Search by movie name or director"
+            value={searchQuery}
+            onChange={handleSearchChange}
+          />
+        </div>
       <Center
         style={{
           width: "100%",
@@ -73,7 +90,7 @@ export const MovieTable = () => {
           boxSizing: "border-box",
         }}
       >
-        <Table columns={columns} data={movies} />
+        <Table columns={columns} data={filteredMovies} />
       </Center>
     </>
   );
