@@ -2,7 +2,7 @@ import { Card, CardBody, CardHeader, Image, Text } from "@yamada-ui/react";
 import React from "react";
 
 type Props = {
-  key?: number;
+  key?: string;
   movieName?: string;
   movieImage?: string[];
 };

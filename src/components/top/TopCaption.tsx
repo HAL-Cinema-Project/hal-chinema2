@@ -10,8 +10,8 @@ export const TopCaption = ({ caption_text }: Props) => {
     <>
       <Text
         position={"relative"}
-        left={"-40px"}
-        fontSize={"6xl"}
+        left={"-50px"}
+        fontSize={"8xl"}
         fontWeight={"bold"}
       >
         {caption_text}
