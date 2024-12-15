@@ -34,13 +34,13 @@ export function ScheduleForm() {
         <section style={{ marginBottom: "2rem" }}>
           <h2>スケジュール情報</h2>
           <div style={fieldContainerStyle}>
-            <InputField fieldName="movieId" label="映画 ID" />
+            <InputField fieldName="movieId" type="映画 ID" />
           </div>
           <div style={fieldContainerStyle}>
-            <InputField fieldName="movieName" label="映画名" />
+            <InputField fieldName="movieName" type="映画名" />
           </div>
           <div style={fieldContainerStyle}>
-            <InputField fieldName="theater" label="劇場" />
+            <InputField fieldName="theater" type="劇場" />
           </div>
         </section>
 
@@ -48,13 +48,13 @@ export function ScheduleForm() {
         <section style={{ marginBottom: "2rem" }}>
           <h2>時間情報</h2>
           <div style={fieldContainerStyle}>
-            <InputField fieldName="startTime" label="開始時間" />
+            <InputField fieldName="startTime" type="開始時間" />
           </div>
           <div style={fieldContainerStyle}>
-            <InputField fieldName="endTime" label="終了時間" />
+            <InputField fieldName="endTime" type="終了時間" />
           </div>
           <div style={fieldContainerStyle}>
-            <InputField fieldName="isAvailable" label="利用可能" />
+            <InputField fieldName="isAvailable" type="利用可能" />
           </div>
         </section>
 
