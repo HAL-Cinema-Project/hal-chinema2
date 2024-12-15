@@ -7,7 +7,7 @@ type TopContentsProps = {
 
 export const TopContents = ({ children }: TopContentsProps) => {
   return (
-    <Box py="20px" bgColor="#15202B">
+    <Box py="40px" bgColor="#15202B">
       {children}
     </Box>
   );
