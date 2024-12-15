@@ -5,13 +5,14 @@ import React from "react";
 import { useMovies } from "../../../../mock/hooks/useMovies";
 import { MovieCard } from "./MovieCard";
 import { TopCaption } from "../TopCaption";
+import { TopContents } from "../TopContents";
 
 export const MovieList = () => {
   const { movies } = useMovies();
 
   return (
     <>
-      <Box p={"20px"} bgColor={"#15202B"}>
+      <TopContents>
         <TopCaption caption_text="MOVIES" />
         <Box as="center">
           <Box
@@ -30,11 +31,11 @@ export const MovieList = () => {
             ))}
           </Box>
 
-          <Button variant={"outline"} color={"#fff"}>
+          <Button variant={"outline"} color={"#fff"} px={"50px"}>
             もっと見る
           </Button>
         </Box>
-      </Box>
+      </TopContents>
     </>
   );
 };
