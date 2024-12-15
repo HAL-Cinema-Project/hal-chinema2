@@ -22,7 +22,7 @@ export const MovieList = () => {
             gap={"10px"}
             p={"20px"}
           >
-            {movies.map((item) => (
+            {movies.slice(0, 4).map((item) => (
               <MovieCard
                 key={item.id}
                 movieName={item.movieName}
