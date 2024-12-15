@@ -1,12 +1,23 @@
 "use client";
-import { Button } from "@yamada-ui/react";
+import { Button, Input } from "@yamada-ui/react";
 import { Table } from "@yamada-ui/table";
 import { deleteSchedule } from "../form/acrions/schedule";
 import { useSchedules } from "../../../../mock/hooks/useSchedule";
+import { useState } from "react";
 
 export const ScheduleTable = () => {
   const { schedules } = useSchedules();
+  const [searchQuery, setSearchQuery] = useState("");
 
+  const handleSearchChange = (event) => {
+    setSearchQuery(event.target.value);
+  };
+
+  const filteredMovies = schedules.filter(
+    (schedule) =>
+      schedule.movieId.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      schedule.theater.toLowerCase().includes(searchQuery.toLowerCase())
+  );
   const column = [
     {
       header: "ID",
@@ -75,7 +86,21 @@ export const ScheduleTable = () => {
 
   return (
     <>
-      <Table data={schedules} columns={column} />
+      <div
+        style={{
+          width: "300px",
+          marginTop: "-40px",
+          marginLeft: "200px",
+          marginBottom: "20px",
+        }}
+      >
+        <Input
+          placeholder="Search by Schedule movie or theater"
+          value={searchQuery}
+          onChange={handleSearchChange}
+        />
+      </div>
+      <Table data={filteredMovies} columns={column} />
     </>
   );
 };
