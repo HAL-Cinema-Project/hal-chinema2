@@ -31,7 +31,7 @@ export const MovieList = () => {
             ))}
           </Box>
 
-          <Button variant={"outline"} color={"#fff"}>
+          <Button variant={"outline"} color={"#fff"} px={"50px"}>
             もっと見る
           </Button>
         </Box>
