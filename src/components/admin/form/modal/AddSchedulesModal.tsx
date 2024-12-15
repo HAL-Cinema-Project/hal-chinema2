@@ -14,7 +14,7 @@ export const AddSchedulesModal = () => {
   return (
     <>
       <Button style={{ margin: "0px 50px" }} onClick={onOpen}>
-        Open Modal
+        Create Schedule
       </Button>
 
       <Modal isOpen={isOpen} onClose={onClose}>

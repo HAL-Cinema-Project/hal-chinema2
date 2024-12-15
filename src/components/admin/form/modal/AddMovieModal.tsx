@@ -14,7 +14,7 @@ export const AddMovieModal = () => {
   return (
     <>
       <Button style={{ margin: "0px 50px" }} onClick={onOpen}>
-        Open Modal
+        Create Movie
       </Button>
 
       <Modal isOpen={isOpen} onClose={onClose}>
