@@ -65,7 +65,8 @@
       "link": "aaa",
       "term": "40",
       "startDate": "2024-01-12",
-      "endDate": "2024-12-23"
+      "endDate": "2024-12-23",
+      "movieImage": ["image/4-2.jpg", "image/4-3.webp", "image/4-4.jpg"]
     }
   ]
 }
