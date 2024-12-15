@@ -15,23 +15,11 @@ interface OrderDetail {
 interface Order {
   id: string;
   userId: string;
-  movieName: string;
+  movieId: string;  // movieIdを追加
   screen: string;
   orderDetail: OrderDetail[];
 }
 
-interface Movie {
-  id: string;
-  movieName: string;
-  director: string;
-  thumbnail: string;
-  summary: string;
-  link: string;
-  term: number;
-  releaseDate: string;
-  endDate: string;
-  movieImage: string[];
-}
 
 interface SeatSelectionContextType {
   selectedSeats: Seat[];
@@ -47,23 +35,12 @@ export const SeatSelectionProvider: FC<{ children: ReactNode; movieId: string }>
   const [reservedSeats, setReservedSeats] = useState<Seat[]>([]);
   const [seatCount, setSeatCount] = useState(0);
 
-  // 映画の詳細情報を取得する関数
-  const fetchMovieDetails = async (movieId: string): Promise<string> => {
-    try {
-      const response = await axios.get<Movie>(`http://localhost:8011/movies/${movieId}`);
-      return response.data.movieName;
-    } catch (error) {
-      console.error("Error fetching movie details:", error);
-      throw error;
-    }
-  };
 
   // 予約済みの座席を取得する関数
-  const fetchReservedSeats = async (movieName: string) => {
+  const fetchReservedSeats = async (movieId: string) => {
     try {
-      const encodedMovieName = encodeURIComponent(movieName); // ここでエンコード
-      const response = await axios.get<Order[]>(`http://localhost:8012/orders?movieName=${encodedMovieName}`);
-      const orders = response.data.filter(order => order.movieName === movieName);
+      const response = await axios.get<Order[]>(`http://localhost:8012/orders?movieId=${movieId}`);
+      const orders = response.data.filter(order => order.movieId === movieId);
       const reserved = orders.flatMap((order: Order) =>
         order.orderDetail.map((detail: OrderDetail) => {
           const [row, number] = detail.seatName.split("");
@@ -94,9 +71,8 @@ export const SeatSelectionProvider: FC<{ children: ReactNode; movieId: string }>
   }, [selectedSeats, seatCount]);
 
   useEffect(() => {
-    fetchMovieDetails(movieId)
-      .then(movieName => fetchReservedSeats(movieName))
-      .catch(error => console.error("Error in fetching movie details or reserved seats:", error));
+    fetchReservedSeats(movieId)
+      .catch(error => console.error("Error in fetching reserved seats:", error));
   }, [movieId]);
 
   return (

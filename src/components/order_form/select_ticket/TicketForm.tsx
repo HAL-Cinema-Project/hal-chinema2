@@ -9,6 +9,7 @@ import { useSeatSelection } from "../hooks/useSeatSelection";
 import { CreateSeatSelects } from "../service/CreateSeatSelects";
 import { option } from "./TicketOption";
 import { PostOrder } from "../service/postOrder";
+import { useRouter } from "next/navigation";
 
 type TicketFormProps = {
   scheduleId: string;
@@ -18,6 +19,7 @@ export function TicketFormProvider(props: TicketFormProps) {
   const { selectedSeats } = useSeatSelection();
   const { schedule } = useScheduleById(props.scheduleId || "");
   const { movie } = useMovieById(schedule?.movieId || "");
+  const router = useRouter();
 
   const methods = useForm({
     resolver: zodResolver(
@@ -54,7 +56,13 @@ export function TicketFormProvider(props: TicketFormProps) {
               option={option}
             />
           ))}
-        <Button type='submit' disabled={selectedSeats.length === 0}>
+        <Button
+          type="submit"
+          disabled={selectedSeats.length === 0}
+          onClick={() => {
+            router.push("/");
+          }}
+        >
           Submit
         </Button>
       </form>

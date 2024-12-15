@@ -390,6 +390,60 @@
           "price": 1200
         }
       ]
+    },
+    {
+      "id": "8ee3",
+      "userId": "1",
+      "movieId": "4",
+      "screen": "シアター1",
+      "orderDetail": [
+        {
+          "seatName": "A2",
+          "priceType": 1600,
+          "price": 1200
+        },
+        {
+          "seatName": "A3",
+          "priceType": 1600,
+          "price": 1200
+        }
+      ]
+    },
+    {
+      "id": "8a4f",
+      "userId": "1",
+      "movieId": "4",
+      "screen": "シアター1",
+      "orderDetail": [
+        {
+          "seatName": "A2",
+          "priceType": 1500,
+          "price": 1200
+        },
+        {
+          "seatName": "A3",
+          "priceType": 1800,
+          "price": 1200
+        }
+      ]
+    },
+    {
+      "id": "e7a8",
+      "userId": "1",
+      "movieId": "4",
+      "screen": "シアター1",
+      "orderDetail": [
+        {
+          "seatName": "F1",
+          "priceType": 1800,
+          "price": 1200
+        },
+        {
+          "seatName": "F2",
+          "priceType": 1800,
+          "price": 1200
+        }
+      ]
     }
   ]
 }
