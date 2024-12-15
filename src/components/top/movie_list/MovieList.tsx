@@ -6,6 +6,7 @@ import { useMovies } from "../../../../mock/hooks/useMovies";
 import { MovieCard } from "./MovieCard";
 import { TopCaption } from "../TopCaption";
 import { TopContents } from "../TopContents";
+import Link from "next/link";
 
 export const MovieList = () => {
   const { movies } = useMovies();
@@ -23,17 +24,24 @@ export const MovieList = () => {
             p={"20px"}
           >
             {movies.slice(0, 4).map((item) => (
-              <MovieCard
+              <Link
+                href={"/"}
                 key={item.id}
-                movieName={item.movieName}
-                movieImage={item.movieImage}
-              />
+                style={{ display: "block", width: "100%" }}
+              >
+                <MovieCard
+                  movieName={item.movieName}
+                  movieImage={item.movieImage}
+                />
+              </Link>
             ))}
           </Box>
 
-          <Button variant={"outline"} color={"#fff"} px={"50px"}>
-            もっと見る
-          </Button>
+          <Link href={"/movies"}>
+            <Button variant={"outline"} color={"#fff"} px={"50px"}>
+              もっと見る
+            </Button>
+          </Link>
         </Box>
       </TopContents>
     </>
