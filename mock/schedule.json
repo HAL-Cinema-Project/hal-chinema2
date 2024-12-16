@@ -330,6 +330,38 @@
       "isAvailable": "",
       "startTime": "2024-12-17T00:00:00",
       "endTime": "2024-12-17T00:00:00"
+    },
+    {
+      "id": "dfcb",
+      "movieId": "1bee",
+      "theater": "シアター1",
+      "isAvailable": "0",
+      "startTime": "2024-12-16T00:00:00",
+      "endTime": "2024-12-16T00:00:00"
+    },
+    {
+      "id": "e505",
+      "movieId": "1bee",
+      "theater": "シアター1",
+      "isAvailable": "0",
+      "startTime": "2024-12-17T00:00:00",
+      "endTime": "2024-12-17T00:00:00"
+    },
+    {
+      "id": "702f",
+      "movieId": "1bee",
+      "theater": "シアター1",
+      "isAvailable": "0",
+      "startTime": "2024-12-18T00:00:00",
+      "endTime": "2024-12-18T00:00:00"
+    },
+    {
+      "id": "00a9",
+      "movieId": "1bee",
+      "theater": "シアター1",
+      "isAvailable": "0",
+      "startTime": "2024-12-19T00:00:00",
+      "endTime": "2024-12-19T00:00:00"
     }
   ]
 }

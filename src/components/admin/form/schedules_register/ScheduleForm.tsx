@@ -37,9 +37,6 @@ export function ScheduleForm() {
             <InputField fieldName="movieId" type="映画 ID" />
           </div>
           <div style={fieldContainerStyle}>
-            <InputField fieldName="movieName" type="映画名" />
-          </div>
-          <div style={fieldContainerStyle}>
             <InputField fieldName="theater" type="劇場" />
           </div>
         </section>

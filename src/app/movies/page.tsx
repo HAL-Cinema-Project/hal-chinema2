@@ -4,7 +4,7 @@ import Link from "next/link";
 import { MoviesMock } from "../../../mock/types/movies";
 import { Box, Flex, Button, Image, Text } from "@yamada-ui/react";
 
-export const Page = () => {
+const Page = () => {
   const { movies } = useMovies();
 
   if (!Array.isArray(movies)) {
@@ -48,7 +48,6 @@ export const Page = () => {
           <Flex justify="center" mt="auto">
             <Link href={item.link || "#"} passHref>
               <Button
-                as="a"
                 w="200"
                 bg="gray.600"
                 color="white"

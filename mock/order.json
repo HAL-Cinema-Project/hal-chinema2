@@ -444,6 +444,24 @@
           "price": 1200
         }
       ]
+    },
+    {
+      "id": "dc74",
+      "userId": "1",
+      "movieId": "1bee",
+      "screen": "シアター1",
+      "orderDetail": [
+        {
+          "seatName": "A2",
+          "priceType": 1800,
+          "price": 1200
+        },
+        {
+          "seatName": "A3",
+          "priceType": 1800,
+          "price": 1200
+        }
+      ]
     }
   ]
 }

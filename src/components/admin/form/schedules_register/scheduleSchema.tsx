@@ -4,9 +4,6 @@ export const scheduleSchema = z.object({
   movieId: z.string({
     message: "映画IDは必須です",
   }),
-  movieName: z.string({
-    message: "映画名は必須です",
-  }),
   theater: z.string({
     message: "シアター名は必須です",
   }),
