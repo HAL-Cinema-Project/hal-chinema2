@@ -58,7 +58,7 @@ const Page = () => {
       <Script id="chatbot-initialize" strategy="afterInteractive">
         {`
           initializeChatbot({
-            textModelId: 'asst_OmbmvzMITHp3xk1KXrERGbAr',
+            textModelId: 'asst_JrVe4SDlLoZuI0PfshmgcAiv',
             voiceModelId: 'wqxhtikFKS1e5jiapVMd',
             apiUrl: 'https://camp-vol-15-stellar.vercel.app/api/chatbot'
           });
