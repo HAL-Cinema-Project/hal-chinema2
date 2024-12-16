@@ -1,5 +1,4 @@
 "use client";
-
 import { Box, Button } from "@yamada-ui/react";
 import React from "react";
 import { useMovies } from "../../../../mock/hooks/useMovies";
