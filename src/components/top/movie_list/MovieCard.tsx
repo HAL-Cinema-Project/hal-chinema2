@@ -9,7 +9,7 @@ type Props = {
 
 export const MovieCard = (props: Props) => {
   return (
-    <Card w={"25%"} variant="outline">
+    <Card w={"100%"} variant="outline">
       <CardHeader
         sx={{
           height: "300px",
