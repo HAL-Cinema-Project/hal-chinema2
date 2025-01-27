@@ -1,12 +1,11 @@
 "use client";
-import Link from "next/link";
+import React, { useState, useEffect } from "react";
 import { useMovies } from "../../../mock/hooks/useMovies";
 import { useSchedules } from "../../../mock/hooks/useSchedule";
 import { ScheduleMock } from "../../../mock/types";
 import { MoviesMock } from "../../../mock/types/movies";
-import { useRouter, useParams } from "next/navigation";
-import { Button } from "@yamada-ui/react";
-import React, { useState, useEffect } from "react";
+import { useRouter, } from "next/navigation";
+import { Grid, GridItem, Box, Text, VStack } from "@yamada-ui/react";
 import { Calendar } from "@yamada-ui/calendar";
 
 type ScheduleList = ScheduleMock & { movieName: string };
@@ -15,11 +14,10 @@ const Page = () => {
   const { movies } = useMovies();
   const { schedules } = useSchedules();
   const route = useRouter();
-  const { id } = useParams();
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [filteredSchedules, setFilteredSchedules] = useState<ScheduleList[]>([]);
 
-  const handleDateChange = (date) => {
+  const handleDateChange = (date: Date) => {
     setSelectedDate(date);
   };
 
@@ -32,8 +30,8 @@ const Page = () => {
       const filtered = schedules
         .filter((schedule: ScheduleMock) => {
           if (!schedule.startTime) return false;
-          const scheduleDate = new Date(schedule.startTime).toISOString().split('T')[0];
-          const selectedDateString = selectedDate.toISOString().split('T')[0];
+          const scheduleDate = new Date(schedule.startTime).toISOString().split("T")[0];
+          const selectedDateString = selectedDate.toISOString().split("T")[0];
           return scheduleDate === selectedDateString;
         })
         .map((schedule: ScheduleMock) => {
@@ -49,31 +47,60 @@ const Page = () => {
     }
   }, [selectedDate, schedules, movies]);
 
+  const formatDateTime = (isoString: string): string => {
+    const date = new Date(isoString);
+    const formatter = new Intl.DateTimeFormat("ja-JP", {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+    return formatter.format(date) + "~"; // "~" を追加
+  };
+
   return (
-    <div style={{ padding: "20px" }}>
-      <Calendar value={selectedDate} onChange={handleDateChange} />
-      <h2>上映一覧 ({selectedDate.toLocaleDateString()})</h2>
-      {filteredSchedules.map((schedule: ScheduleList, index) => (
-        <div key={index} style={{ marginBottom: "20px" }}>
-          <p
-            style={{
-              fontSize: "1.2rem",
+    <>
+      <Box style={{ padding: "20px" }}>
+        <Calendar value={selectedDate} onChange={handleDateChange} />
+      </Box>
+      <Box style={{ padding: "20px" }}>
+        <h2 style={{ padding: "8px 0px 20px 0px" }}>上映一覧 ({selectedDate.toLocaleDateString()})</h2>
+        {filteredSchedules.length === 0 ? (
+          <p>該当するスケジュールがありません。</p>
+        ) : (
+          <Grid
+            templateColumns={{
+              base: "repeat(2, 1fr)",
+              sm: "repeat(1, 1fr)",
+              md: "repeat(1, 1fr)",
+              lg: "repeat(1, 1fr)",
             }}
+            gap={6}
           >
-            {schedule.movieName}
-            {schedule.theater}
-          </p>
-          よやく
-          <Button
-            onClick={() => {
-              handleNavigation(schedule.id as string);
-            }}
-          >
-            予約する
-          </Button>
-        </div>
-      ))}
-    </div>
+            {filteredSchedules.map((schedule: ScheduleList) => (
+              <GridItem key={schedule.id} onClick={() => handleNavigation(schedule.id as string)}>
+                <Box
+                  p={4}
+                  borderWidth="1px"
+                  borderRadius="lg"
+                  shadow="md"
+                  _hover={{ bg: "blue.500", cursor: "pointer", transition: "background-color 0.3s" }}
+                >
+                  <VStack align="start" spacing={2}>
+                    <Text fontSize="lg" fontWeight="bold">
+                      {schedule.movieName}
+                    </Text>
+                    <Text>{schedule.theater}</Text>
+                    <Text>{formatDateTime(schedule.startTime)}</Text>
+                  </VStack>
+                </Box>
+              </GridItem>
+            ))}
+          </Grid>
+        )}
+      </Box>
+    </>
   );
 };
 
