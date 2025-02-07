@@ -4,8 +4,8 @@ import { useMovies } from "../../../mock/hooks/useMovies";
 import { useSchedules } from "../../../mock/hooks/useSchedule";
 import { ScheduleMock } from "../../../mock/types";
 import { MoviesMock } from "../../../mock/types/movies";
-import { useRouter, } from "next/navigation";
-import { Grid, GridItem, Box, Text, VStack } from "@yamada-ui/react";
+import { useRouter } from "next/navigation";
+import { Grid, GridItem, Box, Text, VStack, Flex } from "@yamada-ui/react";
 import { Calendar } from "@yamada-ui/calendar";
 
 type ScheduleList = ScheduleMock & { movieName: string };
@@ -56,51 +56,56 @@ const Page = () => {
       hour: "2-digit",
       minute: "2-digit",
     });
-    return formatter.format(date) + "~"; // "~" を追加
+    return formatter.format(date) + "~";
   };
 
   return (
-    <>
-      <Box style={{ padding: "20px" }}>
-        <Calendar value={selectedDate} onChange={handleDateChange} />
-      </Box>
-      <Box style={{ padding: "20px" }}>
-        <h2 style={{ padding: "8px 0px 20px 0px" }}>上映一覧 ({selectedDate.toLocaleDateString()})</h2>
-        {filteredSchedules.length === 0 ? (
-          <p>該当するスケジュールがありません。</p>
-        ) : (
-          <Grid
-            templateColumns={{
-              base: "repeat(2, 1fr)",
-              sm: "repeat(1, 1fr)",
-              md: "repeat(1, 1fr)",
-              lg: "repeat(1, 1fr)",
-            }}
-            gap={6}
-          >
-            {filteredSchedules.map((schedule: ScheduleList) => (
-              <GridItem key={schedule.id} onClick={() => handleNavigation(schedule.id as string)}>
-                <Box
-                  p={4}
-                  borderWidth="1px"
-                  borderRadius="lg"
-                  shadow="md"
-                  _hover={{ bg: "blue.500", cursor: "pointer", transition: "background-color 0.3s" }}
+    <Box style={{ width: "1200px", margin: "0 auto", padding: "20px" }}>
+      <Flex gap="20px">
+        {/* カレンダー領域（400px） */}
+        <Box style={{ width: "400px" }}>
+          <Calendar value={selectedDate} onChange={handleDateChange} />
+        </Box>
+        {/* スケジュール表示領域（800px） */}
+        <Box style={{ width: "800px" }}>
+          <h2 style={{ padding: "8px 0 20px 0" }}>
+            上映一覧 ({selectedDate.toLocaleDateString()})
+          </h2>
+          {filteredSchedules.length === 0 ? (
+            <p>該当するスケジュールがありません。</p>
+          ) : (
+            <Grid templateColumns="repeat(2, 1fr)" gap={6}>
+              {filteredSchedules.map((schedule: ScheduleList) => (
+                <GridItem
+                  key={schedule.id}
+                  onClick={() => handleNavigation(schedule.id as string)}
                 >
-                  <VStack align="start" spacing={2}>
-                    <Text fontSize="lg" fontWeight="bold">
-                      {schedule.movieName}
-                    </Text>
-                    <Text>{schedule.theater}</Text>
-                    <Text>{formatDateTime(schedule.startTime)}</Text>
-                  </VStack>
-                </Box>
-              </GridItem>
-            ))}
-          </Grid>
-        )}
-      </Box>
-    </>
+                  <Box
+                    p={4}
+                    borderWidth="1px"
+                    borderRadius="lg"
+                    shadow="md"
+                    _hover={{
+                      bg: "blue.500",
+                      cursor: "pointer",
+                      transition: "background-color 0.3s",
+                    }}
+                  >
+                    <VStack align="start" spacing={2}>
+                      <Text fontSize="lg" fontWeight="bold">
+                        {schedule.movieName}
+                      </Text>
+                      <Text>{schedule.theater}</Text>
+                      <Text>{formatDateTime(schedule.startTime)}</Text>
+                    </VStack>
+                  </Box>
+                </GridItem>
+              ))}
+            </Grid>
+          )}
+        </Box>
+      </Flex>
+    </Box>
   );
 };
 
