@@ -1,5 +1,6 @@
 import React from "react";
 import { useSeatSelection } from "../hooks/useSeatSelection";
+import { TicketFormModal } from "@/components/order_form/select_ticket/TicketFormModal";
 
 // 行と列の定義
 const ROWS = "ABCDEFGHIJ".split(""); // A～J の10行
@@ -15,20 +16,35 @@ const aisleRowAfterIndices = [2, 7];
 const missingSeatRows = ["D", "E", "F", "G", "H"];
 const missingSeatNumbers = [1, 2, 21, 22];
 
-const CinemaSeats = () => {
+interface CinemaSeatsProps {
+  scheduleId: string;
+}
+
+const CinemaSeats: React.FC<CinemaSeatsProps> = ({ scheduleId }) => {
   const { selectedSeats, reservedSeats, toggleSeatSelection } = useSeatSelection();
 
   return (
     <div style={styles.container}>
-      <h2>座席予約</h2>
-      <p>ご希望の座席をお選びください。</p>
+      {/* ヘッダー部分 */}
+      <div style={styles.header}>
+        <div style={styles.headerLeft}>
+          <h2>座席予約</h2>
+          <p>ご希望の座席をお選びください。</p>
+        </div>
+        <div style={styles.headerRight}>
+          {/* TicketFormModal を埋め込み、機能を利用 */}
+          <TicketFormModal scheduleId={scheduleId} />
+        </div>
+      </div>
+
+      {/* 座席グリッド */}
       <div style={styles.seatGrid}>
         {ROWS.map((row, rowIndex) => (
           <React.Fragment key={row}>
             <div style={styles.row}>
               {Array.from({ length: SEATS_PER_ROW }, (_, seatIndex) => {
                 const seatNumber = seatIndex + 1;
-                // 欠番となる座席の場合は、ボタンではなくプレースホルダーを表示
+                // 欠番の場合はプレースホルダーを表示
                 if (missingSeatRows.includes(row) && missingSeatNumbers.includes(seatNumber)) {
                   return (
                     <React.Fragment key={seatNumber}>
@@ -37,8 +53,7 @@ const CinemaSeats = () => {
                     </React.Fragment>
                   );
                 }
-
-                // 通常の座席の場合
+                // 通常の座席ボタン
                 const seat = { row, number: seatNumber };
                 const isSelected = selectedSeats.some(
                   (s) => s.row === row && s.number === seatNumber
@@ -77,6 +92,8 @@ const CinemaSeats = () => {
           </React.Fragment>
         ))}
       </div>
+
+      {/* 凡例 */}
       <div style={styles.legend}>
         <div style={styles.legendItem}>
           <div style={{ ...styles.seat, backgroundColor: "blue" }} />
@@ -105,8 +122,22 @@ const styles: { [key: string]: React.CSSProperties } = {
     color: "white",
     padding: "20px",
     borderRadius: "10px",
-    width: "fit-content",
+    width: "1200px", // 幅を1200pxに固定
     margin: "0 auto",
+  },
+  header: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    width: "100%",
+    marginBottom: "20px",
+  },
+  headerLeft: {
+    // 必要に応じて追加スタイルを設定
+  },
+  headerRight: {
+    textAlign: "right",
+    // 必要に応じて追加スタイルを設定
   },
   seatGrid: {
     display: "flex",
@@ -132,7 +163,7 @@ const styles: { [key: string]: React.CSSProperties } = {
     height: "40px",
     margin: "5px",
     borderRadius: "5px",
-    backgroundColor: "transparent", // 透明に変更
+    backgroundColor: "transparent",
   },
   columnGap: {
     width: "20px",
@@ -154,4 +185,3 @@ const styles: { [key: string]: React.CSSProperties } = {
 };
 
 export default CinemaSeats;
-
