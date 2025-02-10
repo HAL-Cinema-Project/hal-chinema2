@@ -1,10 +1,7 @@
 "use client";
 
 import CinemaSeats from "@/components/order_form/select_ticket/CinemaSeats";
-import { TicketFormModal } from "@/components/order_form/select_ticket/TicketFormModal";
-import {
-  OrderIdProvider,
-} from "@/components/order_form/store/OrderIdContext";
+import { OrderIdProvider } from "@/components/order_form/store/OrderIdContext";
 import { SeatSelectionProvider } from "@/components/order_form/store/SeatSelectionContext";
 import { useParams } from "next/navigation";
 import React, { useState, useEffect } from "react";
@@ -16,8 +13,8 @@ const Page = () => {
 
   useEffect(() => {
     if (typeof scheduleId === "string") {
-      // スケジュールIDからmovieIdを取得
-      axios.get(`http://localhost:8013/schedules/${scheduleId}`)
+      axios
+        .get(`http://localhost:8013/schedules/${scheduleId}`)
         .then(response => {
           setMovieId(response.data.movieId);
         })
@@ -34,9 +31,7 @@ const Page = () => {
   return (
     <OrderIdProvider>
       <SeatSelectionProvider movieId={movieId}>
-        <CinemaSeats />
-
-        {scheduleId ? <TicketFormModal scheduleId={scheduleId} /> : null}
+        <CinemaSeats scheduleId={scheduleId} />
       </SeatSelectionProvider>
     </OrderIdProvider>
   );
