@@ -43,7 +43,7 @@ export const SeatSelectionProvider: FC<{ children: ReactNode; movieId: string }>
       const orders = response.data.filter(order => order.movieId === movieId);
       const reserved = orders.flatMap((order: Order) =>
         order.orderDetail.map((detail: OrderDetail) => {
-          const [row, number] = detail.seatName.split("");
+          const [_, row, number] = detail.seatName.match(/^([A-Z]+)(\d+)$/) || [];
           return { row, number: parseInt(number) };
         })
       );
