@@ -5,6 +5,7 @@ export interface MoviesMock {
   thumbnail?: string;
   summary?: string;
   link?: string;
+  notice?: string;
   term?: number;
   releaseDate?: string;
   endDate?: string;
