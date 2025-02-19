@@ -2,10 +2,11 @@ import React from "react";
 
 import { Box, Button, Image } from "@yamada-ui/react";
 import { TopCaption } from "../TopCaption";
+import { TopContents } from "../TopContents";
 
 export const TheaterList = () => {
   return (
-    <>
+    <TopContents>
       <TopCaption caption_text="THEATERS" />
       <Box as={"center"}>
         <Box display="flex" w="1000px" py={"20px"}>
@@ -38,6 +39,6 @@ export const TheaterList = () => {
           詳しく見る
         </Button>
       </Box>
-    </>
+    </TopContents>
   );
 };

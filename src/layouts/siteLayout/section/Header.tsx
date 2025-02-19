@@ -1,5 +1,5 @@
-import { Box, Image } from "@yamada-ui/react"
-import Link from "next/link"
+import { Box, Image } from "@yamada-ui/react";
+import Link from "next/link";
 
 export const Header = () => {
   return (
@@ -11,6 +11,7 @@ export const Header = () => {
       height="50px"
       padding="0 15px"
       bgColor="#121922"
+      z-index="100"
     >
       <Link href="http://localhost:3000">
         <Image
@@ -25,5 +26,5 @@ export const Header = () => {
         />
       </Link>
     </Box>
-  )
-}
+  );
+};

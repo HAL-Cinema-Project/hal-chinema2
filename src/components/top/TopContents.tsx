@@ -7,7 +7,15 @@ type TopContentsProps = {
 
 export const TopContents = ({ children }: TopContentsProps) => {
   return (
-    <Box py="40px" bgColor="#15202B">
+    <Box
+      display={"flex"}
+      flexDirection={"column"}
+      justifyContent={"center"}
+      w={"1400px"}
+      h={"100vh"}
+      margin={"auto"}
+      my={"40px"}
+    >
       {children}
     </Box>
   );

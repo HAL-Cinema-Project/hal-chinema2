@@ -1,10 +1,11 @@
 import React from "react";
 import { Box, Button, Text } from "@yamada-ui/react";
 import { TopCaption } from "../TopCaption";
+import { TopContents } from "../TopContents";
 
 export const FoodSection = () => {
   return (
-    <>
+    <TopContents>
       <TopCaption caption_text="FOODS" />
 
       <Box
@@ -30,6 +31,6 @@ export const FoodSection = () => {
           </Box>
         </Box>
       </Box>
-    </>
+    </TopContents>
   );
 };

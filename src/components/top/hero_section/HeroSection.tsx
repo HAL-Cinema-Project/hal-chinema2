@@ -5,9 +5,7 @@ const HeroSection = () => {
   return (
     <Box display={"flex"} justifyContent={"center"}>
       <Carousel withControls={false} w={"99vw"} h={"100vh"}>
-        <CarouselSlide as={Center} bg="primary">
-          1
-        </CarouselSlide>
+        <CarouselSlide bg="primary">1</CarouselSlide>
         <CarouselSlide as={Center} bg="secondary">
           2
         </CarouselSlide>

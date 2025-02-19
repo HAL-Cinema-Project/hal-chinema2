@@ -1,10 +1,11 @@
 import React from "react";
 import { Box, Container, Grid } from "@yamada-ui/react";
 import { TopCaption } from "../TopCaption";
+import { TopContents } from "../TopContents";
 
 export const TopicsSection = () => {
   return (
-    <>
+    <TopContents>
       <TopCaption caption_text="TOPICS" />
       <Box as={"center"}>
         <Box w={"1000px"} py={"10px"}>
@@ -31,6 +32,6 @@ export const TopicsSection = () => {
           </Container>
         </Box>
       </Box>
-    </>
+    </TopContents>
   );
 };

@@ -6,17 +6,18 @@ import { MovieCard } from "./MovieCard";
 import { TopCaption } from "../TopCaption";
 
 import Link from "next/link";
+import { TopContents } from "../TopContents";
 
 export const MovieList = () => {
   const { movies } = useMovies();
 
   return (
-    <>
+    <TopContents>
       <TopCaption caption_text="MOVIES" />
       <Box as="center">
         <Box
           display={"flex"}
-          w={"1000px"}
+          w={"100%"}
           justifyContent={"center"}
           gap={"10px"}
           p={"20px"}
@@ -41,6 +42,6 @@ export const MovieList = () => {
           </Button>
         </Link>
       </Box>
-    </>
+    </TopContents>
   );
 };

@@ -9,15 +9,11 @@ import React from "react";
 const Page = () => {
   return (
     <Box minH="100vh">
-      {" "}
-      {/* レイアウト崩れ防止 */}
       <HeroSection />
-      <Box>
-        <MovieList />
-        <TheaterList />
-        <FoodSection />
-        <TopicsSection />
-      </Box>
+      <MovieList />
+      <TheaterList />
+      <FoodSection />
+      <TopicsSection />
     </Box>
   );
 };
