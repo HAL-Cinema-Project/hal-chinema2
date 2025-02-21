@@ -12,7 +12,7 @@ export const MovieCard = (props: Props) => {
     <Card w={"100%"} variant="outline">
       <CardHeader
         sx={{
-          height: "300px",
+          // height: "300px",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
