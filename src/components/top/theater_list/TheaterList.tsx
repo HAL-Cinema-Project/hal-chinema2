@@ -1,15 +1,16 @@
 import React from "react";
 
-import { Box, Button, Image } from "@yamada-ui/react";
+import { Box, Text, Image } from "@yamada-ui/react";
 import { TopCaption } from "../TopCaption";
-import { TopContents } from "../TopContents";
 
 export const TheaterList = () => {
   return (
-    <TopContents>
-      <TopCaption caption_text="THEATERS" />
+    <Box h={"100vh"}>
+      <Box pl={"40px"}>
+        <TopCaption caption_text="THEATERS" />
+      </Box>
       <Box as={"center"}>
-        <Box display="flex" w="1000px" py={"20px"}>
+        <Box display="flex" w="100%" py={"20px"}>
           <Box flex={1}>
             <Image
               w="100%"
@@ -34,11 +35,18 @@ export const TheaterList = () => {
               objectFit="cover"
             />
           </Box>
+          <Box
+            display={"flex"}
+            justifyContent={"center"}
+            alignItems={"center"}
+            flex={1}
+            w={"100%"}
+            background={"#121c4a"}
+          >
+            <Text fontSize={"2rem"}>劇場一覧 &gt;</Text>
+          </Box>
         </Box>
-        <Button variant={"outline"} color={"#fff"} px={"50px"}>
-          詳しく見る
-        </Button>
       </Box>
-    </TopContents>
+    </Box>
   );
 };

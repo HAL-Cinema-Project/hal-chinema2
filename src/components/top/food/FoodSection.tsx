@@ -6,24 +6,25 @@ import { TopContents } from "../TopContents";
 export const FoodSection = () => {
   return (
     <TopContents>
-      <TopCaption caption_text="FOODS" />
-
       <Box
         display={"flex"}
-        justifyContent={"center"}
-        alignItems={"center"}
-        gap={"40px"}
-        w="1000px"
+        justifyContent={"left"}
+        alignItems={"end"}
+        w="100%"
+        height={"80%"}
         py={"20px"}
+        backgroundImage="url(image/bluelock_scene.jpg)"
+        borderRadius={"40px"}
       >
-        <Box w={"350px"} h={"400px"} bgColor={"#222"} rounded={"10px"}></Box>
-
-        <Box>
-          <Text w={"350px"} py={"40px"}>
-            HALシネマではポップコーンやソフトドリンクなどの定番メニューだけでなく、
-            期間限定の特別メニューも味わうことができます。
-            映画のお供に、1人でも複数人でも楽しむことができます。
-          </Text>
+        <Box p={"75px"} color={"#000"}>
+          <Box py={"20px"}>
+            <TopCaption caption_text="FOODS" />
+            <Text w={"350px"}>
+              HALシネマではポップコーンやソフトドリンクなどの定番メニューだけでなく、
+              期間限定の特別メニューも味わうことができます。
+              映画のお供に、1人でも複数人でも楽しむことができます。
+            </Text>
+          </Box>
           <Box as={"center"}>
             <Button variant={"outline"} color={"#fff"} px={"50px"}>
               詳しく見る

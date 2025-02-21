@@ -8,8 +8,8 @@ export const TopicsSection = () => {
     <TopContents>
       <TopCaption caption_text="TOPICS" />
       <Box as={"center"}>
-        <Box w={"1000px"} py={"10px"}>
-          <Container maxW="1000px" mx="auto" py={4}>
+        <Box py={"10px"}>
+          <Container mx="auto" py={4}>
             <Grid templateColumns="repeat(2, 1fr)" gap={4}>
               {[...Array(6)].map((_, index) => (
                 <Box
