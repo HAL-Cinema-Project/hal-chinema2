@@ -14,8 +14,8 @@ const Page = () => {
       <MovieList />
       <TheaterList />
       <ScheduleSection />
-      <FoodSection />
-      <TopicsSection />
+      {/* <FoodSection /> */}
+      {/* <TopicsSection /> */}
     </Box>
   );
 };
