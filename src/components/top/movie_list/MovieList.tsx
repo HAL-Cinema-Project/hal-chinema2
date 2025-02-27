@@ -20,7 +20,6 @@ export const MovieList = () => {
           w={"100%"}
           justifyContent={"center"}
           gap={"20px"}
-          p={"5px"}
           pb={"20px"}
         >
           {movies.slice(0, 4).map((item) => (
