@@ -19,8 +19,9 @@ export const MovieList = () => {
           display={"flex"}
           w={"100%"}
           justifyContent={"center"}
-          gap={"10px"}
-          p={"20px"}
+          gap={"20px"}
+          p={"5px"}
+          pb={"20px"}
         >
           {movies.slice(0, 4).map((item) => (
             <Link
