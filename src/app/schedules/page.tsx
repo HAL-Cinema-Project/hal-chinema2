@@ -4,17 +4,21 @@ import { useMovies } from "../../../mock/hooks/useMovies";
 import { useSchedules } from "../../../mock/hooks/useSchedule";
 import { ScheduleMock } from "../../../mock/types";
 import { MoviesMock } from "../../../mock/types/movies";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { Grid, GridItem, Box, Text, VStack, Flex } from "@yamada-ui/react";
 import { Calendar } from "@yamada-ui/calendar";
 
 type ScheduleList = ScheduleMock & { movieName: string };
 
 const Page = () => {
+  const searchParams = useSearchParams();
+  const dateParam = searchParams.get("date");
+  const initialDate = dateParam ? new Date(dateParam) : new Date();
+
   const { movies } = useMovies();
   const { schedules } = useSchedules();
   const route = useRouter();
-  const [selectedDate, setSelectedDate] = useState(new Date());
+  const [selectedDate, setSelectedDate] = useState(initialDate);
   const [filteredSchedules, setFilteredSchedules] = useState<ScheduleList[]>([]);
 
   const handleDateChange = (date: Date) => {
