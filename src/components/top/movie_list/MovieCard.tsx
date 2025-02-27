@@ -2,34 +2,35 @@ import { Card, CardBody, CardHeader, Image, Text } from "@yamada-ui/react";
 import React from "react";
 
 type Props = {
-  key?: string;
   movieName?: string;
   movieImage?: string[];
 };
 
 export const MovieCard = (props: Props) => {
   return (
-    <Card w={"100%"} variant="outline">
+    <Card w="100%" p={0} variant="outline" borderRadius="5px">
       <CardHeader
+        p={0}
         sx={{
-          // height: "300px",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
           overflow: "hidden",
+          borderRadius: "5px 5px 0 0",
         }}
       >
         <Image
-          sx={{
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-          }}
           src={props.movieImage?.[0]}
           alt={props.movieName}
+          sx={{
+            width: "100%",
+            height: "auto",
+            objectFit: "cover",
+            borderRadius: "5px 5px 0 0",
+          }}
         />
       </CardHeader>
-      <CardBody>
+      <CardBody p={3}>
         <Text w={"100%"} isTruncated>
           {props.movieName}
         </Text>
