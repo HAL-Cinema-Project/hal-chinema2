@@ -12,7 +12,7 @@ export const TopContents = ({ children }: TopContentsProps) => {
       flexDirection={"column"}
       justifyContent={"center"}
       w={"1400px"}
-      h={"70vh"}
+      h={"100vh"}
       margin={"auto"}
       my={"40px"}
     >

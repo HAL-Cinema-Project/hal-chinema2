@@ -10,7 +10,7 @@ import React from "react";
 const Page = () => {
   return (
     <Box minH="100vh">
-      <HeroSection />
+      {/* <HeroSection /> */}
       <MovieList />
       <TheaterList />
       <ScheduleSection />
